@@ -8,9 +8,9 @@ This project is developed for a competition, showcasing a modular and well-struc
 
 The system is designed with distinct modules for data handling, model training, inference, and a web application for user interaction. The code is organized into logical modules for data processing (`data_handling/`), model definition and training (`model_pipeline/`), configuration (`configs/`), and the web interface (`app.py`, `templates/`, `static/`). Pre-trained model weights are stored in `results/saved_models_resnet/`.
 
-You can view the detailed system architecture diagram [here](https://github.com/Abdullah2020/Kadada-X/blob/main/3MTT_system_model1.png) or by clicking the image below:
+You can view the detailed system architecture diagram [here](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png) or by clicking the image below:
 
-[![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/main/3MTT_system_model1.png)](https://github.com/Abdullah2020/Kadada-X/blob/main/3MTT_system_model1.png)
+[![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/3MTT_system_model1.png)](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png)
 
 ## Features
 
@@ -113,7 +113,7 @@ The application will typically start a development server, and you'll see output
 You should be greeted by the application's main page, which will look something like this:
 *(Ensure `web_app_background.png` is in your GitHub repository at the specified path for the image to display. Update the path if necessary.)*
 
-[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/main/web_app_background.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/main/web_app_background.png)
+[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)
 
 **How to Use the Web App:**
 
