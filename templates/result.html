@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="app-header">
+        <img src="{{ url_for('static', filename='3mtt_logo.png') }}" alt="App Logo" class="logo">
+        <span class="app-title">Kadada-X: Rice Disease AI</span>
+    </header>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        {% if error %}
+            <ul class="flashes"><li class="error">Error: {{ error }}</li></ul>
+        {% else %}
+            <p><strong>Uploaded Image:</strong></p>
+            <img src="{{ url_for('get_uploaded_image', filename=filename) }}" alt="Uploaded Image" class="uploaded-image">
+            
+            <div class="prediction-details">
+                <p><strong>Predicted Disease:</strong> <span id="diseaseNameSpan">{{ prediction.label }}</span></p>
+                <p><strong>Confidence:</strong> {{ "%.2f" | format(prediction.confidence * 100) }}%</p>
+            </div>
+
+            {% if prediction.show_recommendation_buttons %}
+                <h2>Need Management Advice? || Kana Bukatar Shawarwari?</h2>
+                <div class="action-buttons language-choice-buttons" style="text-align: center;">
+                    <button class="get-recommendation-btn" data-lang="English">Get Recommendation (in English)</button>
+                    <button class="get-recommendation-btn hausa-btn" data-lang="Hausa">Nemi Shawara (a Harshen Hausa)</button>
+                    <button id="noThanksBtn" class="no-thanks-btn">No, Thanks / A'a, Bana bukata</button>
+                </div>
+                <div id="recommendation-area" style="display:none;">
+                    <!-- Content will be injected here by JavaScript -->
+                </div>
+            {% elif prediction.is_healthy %}
+                 <p style="text-align:center; font-weight:bold;">The plant is predicted to be healthy. No specific disease management advice needed.</p>
+            {% endif %}
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="footer-link">Upload another image / Shigar da wani hoton</a>
+    </div>
+
+    <footer class="app-footer">
+        <h3>Kadada-X Vision Model Team - 3MTT Fellowship</h3>
+        <div class="footer-credits">
+            <div class="student-info">
+                <p><strong>Name:</strong> Abdullahi Isa Ahmed</p>
+                <p><strong>3MTT ID:</strong> FE/23/39125017</p>
+                <p><strong>Learning Track:</strong> AI/ML [Cohort 3]</p>
+            </div>
+            <!-- <div class="student-info">
+                <p><strong>Name:</strong> [Student 2 Full Name]</p>
+                <p><strong>3MTT ID:</strong> [Student 2 ID Number]</p>
+                <p><strong>Learning Track:</strong> [Student 2 Track]</p>
+            </div> -->
+        </div>
+        <p style="margin-top: 10px; font-size: 0.8em; color: #bdc3c7;">© 2024 Kadada-X Vision Model Team. All Rights Reserved.</p>
+    </footer>
+
+    {% if prediction and prediction.show_recommendation_buttons %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const getRecommendationButtons = document.querySelectorAll('.get-recommendation-btn');
+            const noThanksBtn = document.getElementById('noThanksBtn');
+            const recommendationArea = document.getElementById('recommendation-area');
+            const diseaseNameSpan = document.getElementById('diseaseNameSpan');
+            const diseaseName = diseaseNameSpan ? diseaseNameSpan.textContent : 'Unknown Disease';
+
+            getRecommendationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLanguage = this.dataset.lang;
+                    let recommendationHeading = ''; // Initialize heading
+
+                    // --- DYNAMIC HEADING TEXT ---
+                    if (selectedLanguage.toLowerCase() === 'hausa') {
+                        recommendationHeading = 'Shawarwarin Gudanarwa na cutar ' + diseaseName + ' (a Harshen Hausa)';
+                    } else {
+                        recommendationHeading = 'Management Advice for ' + diseaseName + ' (in English)';
+                    }
+                    // --- END OF DYNAMIC HEADING TEXT ---
+
+
+                    recommendationArea.style.display = 'block';
+                    recommendationArea.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center;">Fetching recommendations in ' + selectedLanguage + '...</p>';
+
+                    fetch("{{ url_for('api_get_recommendation') }}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 
+                            disease_name: diseaseName,
+                            language: selectedLanguage
+                        })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(errData => {
+                                throw new Error(errData.error || 'Network response was not ok');
+                            }).catch(() => {
+                                throw new Error('Network response was not ok: ' + response.statusText);
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            let recommendationText = data.recommendation_text;
+                            // Clean potential markdown delimiters
+                            recommendationText = recommendationText.replace(/^```html\s*/i, '');
+                            recommendationText = recommendationText.replace(/```\s*$/, '');
+                            recommendationText = recommendationText.trim();
+                            
+                            // --- USE THE DYNAMIC HEADING HERE ---
+                            recommendationArea.innerHTML = '<h3>' + recommendationHeading + '</h3><div>' + recommendationText + '</div>';
+                        } else {
+                            recommendationArea.innerHTML = '<p style="color:red; text-align:center;">Error: ' + (data.error || 'Could not fetch recommendations.') + '</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        recommendationArea.innerHTML = '<p style="color:red; text-align:center;">An error occurred: ' + error.message + '</p>';
+                    });
+                });
+            });
+
+            if (noThanksBtn) {
+                noThanksBtn.addEventListener('click', function() {
+                    recommendationArea.innerHTML = '<p style="text-align:center;">Okay, no recommendations will be shown. / To, ba za a nuna shawarwari ba.</p>';
+                    recommendationArea.style.display = 'block';
+                });
+            }
+        });
+    </script>
+    {% endif %}
+</body>
+</html>

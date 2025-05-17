@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rice Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- === HEADER SECTION === -->
+    <header class="app-header">
+        <img src="{{ url_for('static', filename='3mtt_logo.png') }}" alt="App Logo" class="logo">
+        <span class="app-title">Kadada-X: Rice Disease AI</span>
+    </header>
+    <!-- === END OF HEADER SECTION === -->
+
+    <div class="container">
+        <h1>Upload Rice Leaf Image</h1>
+        <form method="post" action="{{ url_for('upload_and_predict') }}" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="submit" value="Upload and Predict">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- === NEW FOOTER SECTION (Integrated) === -->
+    <footer class="app-footer">
+        <h3>Kadada-X Vision Model Team - 3MTT Fellowship</h3>
+        <div class="footer-credits">
+            <div class="student-info">
+                <p><strong>Name:</strong> Abdullahi Isa Ahmed</p>
+                <p><strong>3MTT ID:</strong> FE/23/39125017</p>
+                <p><strong>Learning Track:</strong> AI/ML [Cohort 3]</p>
+            </div>
+            <!-- <div class="student-info">
+                <p><strong>Name:</strong> XYZ...</p>
+                <p><strong>3MTT ID:</strong> FE/...</p>
+                <p><strong>Learning Track:</strong> AI/ML [Cohort 3]</p>
+            </div> -->
+            <!-- Add more <div class="student-info"> blocks if needed for more students -->
+        </div>
+        <p style="margin-top: 10px; font-size: 0.8em; color: #bdc3c7;">© 2025 Kadada-X Vision Model Team. All Rights Reserved.</p>
+    </footer>
+    <!-- === END OF FOOTER SECTION === -->
+</body>
+</html>

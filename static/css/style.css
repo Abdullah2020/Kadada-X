@@ -1,0 +1,231 @@
+/* static/css/style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.app-header .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+}
+
+.app-header .app-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    margin: 0 auto 20px auto;
+    flex-grow: 1;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img.uploaded-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.prediction-details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.prediction-details strong {
+    color: #555;
+}
+
+.action-buttons button,
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 15px; /* Adjusted padding for potentially longer button text */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover,
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.action-buttons .no-thanks-btn {
+    background-color: #7f8c8d;
+}
+.action-buttons .no-thanks-btn:hover {
+    background-color: #6c7a7d;
+}
+
+/* Styles for the new language choice buttons area */
+.language-choice-buttons button {
+    margin: 10px 8px; /* Specific margin for these buttons if needed */
+}
+
+.action-buttons .hausa-btn {
+    background-color: #27ae60; /* Green for Hausa button */
+}
+.action-buttons .hausa-btn:hover {
+    background-color: #229954; /* Darker green on hover */
+}
+
+
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+.flashes li {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.flashes li.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.flashes li.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#recommendation-area {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+#recommendation-area h3 {
+    text-align: center;
+    color: #007bff;
+    margin-top: 0;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footer-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #3498db;
+    text-decoration: none;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.app-footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    margin-top: auto;
+}
+
+.app-footer h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-credits {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+}
+
+.student-info {
+    background-color: #2c3e50;
+    padding: 15px;
+    border-radius: 6px;
+    min-width: 250px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.student-info p {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.student-info strong {
+    color: #bdc3c7;
+}
+
