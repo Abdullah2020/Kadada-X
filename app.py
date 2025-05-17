@@ -37,8 +37,7 @@ app = Flask(__name__) # This MUST happen before you define routes with @app.rout
 
 # --- Configuration for Flask App ---
 
-ysk = 'f93a5cc4270388dfec808f5eac8d58d0bf931e412a9f316c4deee56feafbf374' # <-- Put your real API key here
-# app.secret_key = "your secret key"  # Needed for flash messages
+ysk = 'xxxx-xxxx-xxxxx-xxxxx-' # <-- Put your real API key here
 
 app.secret_key = ysk  # Needed for flash messages
 
