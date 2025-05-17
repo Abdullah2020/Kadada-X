@@ -29,7 +29,7 @@ try:
 except ImportError as e:
     print(f"Error importing project modules: {e}")
     sys.exit(1)
-
+  
 # ------------------------------------------------------------
 # 3. FLASK APPLICATION INITIALIZATION AND CONFIGURATION
 # ------------------------------------------------------------
