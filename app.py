@@ -8,9 +8,11 @@ import matplotlib.pyplot as plt # Not directly used for web display
 import torch
 import google.generativeai as genai
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory, flash, jsonify # Ensure jsonify is imported
-
+from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
-# from flask import jsonify # Not used in current example, can remove or keep for future APIs
+
+
+load_dotenv()  # Load environment variables from .env file if it exists
 
 # ------------------------------------------------------------
 # 2. PATH SETUP (for your custom modules)
@@ -37,8 +39,9 @@ app = Flask(__name__) # This MUST happen before you define routes with @app.rout
 
 # --- Configuration for Flask App ---
 
-ysk = 'xxxx-xxxx-xxxxx-xxxxx-' # <-- Put your real API key here
+# ysk = 'xxxx-xxxx-xxxxx-xxxxx-' # <-- Put your real API key here
 
+ysk = os.getenv('FLASK_SECRET_KEY')
 app.secret_key = ysk  # Needed for flash messages
 
 UPLOAD_FOLDER = os.path.join(project_root, 'static', 'uploads')
@@ -60,7 +63,10 @@ def load_models_and_config():
     global kadada_x_loaded_model, gemini_model_instance, cfg # Declare we're modifying globals
 
     # GEMINI API SETUP
-    GEMINI_API_KEY = "xxxx-xxxx-xxxxx-xxxxx-"  # <-- Put your real API key here
+    # GEMINI_API_KEY = "xxxx-xxxx-xxxxx-xxxxx-"  # <-- Put your real API key here
+
+    GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')  # Use environment variable for security
+
     if not GEMINI_API_KEY:
         print("Warning: Missing API key. Set GOOGLE_API_KEY environment variable.")
         # Decide if you want to proceed without Gemini or exit
@@ -93,7 +99,7 @@ def load_models_and_config():
         except Exception as e:
             print(f"Warning: Could not automatically load class names: {e}")
             # Provide a fallback list if essential for the app to run
-            cfg.LEAF_DISEASE_CLASSES = ["Brown spot", "Hispa", "Leaf blast", "Healthy", "Unknown"]
+            cfg.LEAF_DISEASE_CLASSES = ["Bacterial leaf blight", "Brown spot", "Leaf smut"] # , "Healthy", "Unknown"
             print(f"Using fallback class names: {cfg.LEAF_DISEASE_CLASSES}")
 
 
@@ -104,16 +110,24 @@ def load_models_and_config():
     # --- Load the Prediction Model ---
     try:
         # Ensure this model path is correct relative to your project_root
-        model_path = os.path.join(project_root, "results", "saved_models_resnet", "KadadaX_Vision_v1.pth")
-        if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Prediction model weights file not found at: {model_path}")
+        # model_path = os.path.join(project_root, "results", "saved_models_resnet", "KadadaX_Vision_v1.pth")
+        # if not os.path.exists(model_path):
+        #     raise FileNotFoundError(f"Prediction model weights file not found at: {model_path}")
+
+        # model_path = "D:/Kadada-X/results/saved_models_resnet/KadadaX_Vision_v1.pth"
+
+        # model_path = "D:\\Kadada-X\\results\\saved_models_resnet\\KadadaX_Vision_v1.pth"
+        
+
+        model_path = r"D:\Kadada-X\results\saved_models_resnet\KadadaX_Vision_v1.pth"
 
         print(f"Attempting to load prediction model for {num_classes_for_model or 'inferred'} classes from {model_path}...")
-        kadada_x_loaded_model = load_inference_model(
+        loaded_model = load_inference_model(
             model_weights_path=model_path,
             num_classes=num_classes_for_model
         )
-        if kadada_x_loaded_model:
+        if loaded_model:
+            kadada_x_loaded_model = loaded_model
             print("Kadada-X prediction model loaded successfully!")
         else:
             print("ERROR: Prediction model could not be loaded (load_inference_model returned None).")

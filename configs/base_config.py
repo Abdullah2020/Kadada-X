@@ -7,7 +7,7 @@ MODEL_NAME = "KadadaX_Vision_v1" # Versioning is good practice
 # --- Dataset Configuration ---
 # IMPORTANT: Update this path to where your 'rice_leaf_diseases' dataset is located
 # This should be the directory containing subfolders like 'Bacterialblight', 'Brownspot', 'Leafsmut'
-DATASET_ROOT_PATH = "..../Kadada-X/rice_leaf_diseases_df" #/path/to/your/unzipped/rice-leaf-diseases" # CHANGE THIS!
+DATASET_ROOT_PATH = "./Kadada-X/rice_leaf_diseases_df" #/path/to/your/unzipped/rice-leaf-diseases" 
 
 # --- Image Preprocessing and Augmentation ---
 
