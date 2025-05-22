@@ -12,6 +12,7 @@ You can view the detailed system architecture diagram [here](https://github.com/
 
 [![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/3MTT_system_model1.png)](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png)
 
+
 ## Features
 
 *   **Disease Detection:** Classifies rice leaf images into common disease categories (e.g., Brown Spot, Hispa, Leaf Blast) and Healthy.
