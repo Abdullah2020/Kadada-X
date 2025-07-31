@@ -23,6 +23,13 @@ You can view the detailed system architecture diagram [here](https://github.com/
     *   Receive AI-generated management recommendations for the detected disease in either English or Hausa languages.
 *   **Multilingual Recommendations:** Leverages Google's Gemini AI to provide agricultural advice in the user's preferred language (English or Hausa).
 
+## Author
+
+**Abdullahi Isa Ahmed**  
+Fellow ID: FE/23/39125017 
+Track: AI/ML
+3MTT Cohort 3 Fellowship Program
+
 ## Getting Started
 
 Follow these steps to set up and run the project locally.
@@ -97,7 +104,8 @@ Before running, ensure your dataset is correctly structured and that the paths a
 
 #### 2. Running the Web Application (Flask)
 
-To start the Flask web application, which provides the user interface for disease detection and recommendations, run the following command from your project's root directory (while your virtual environment is active):
+To start the Flask web application, which provides the user interface for disease detection and recommendations, run the following command from your project's root directory (while your kadadaX conda environment is active):
+
 
 ```bash
 python app.py
