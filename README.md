@@ -28,6 +28,7 @@ You can view the detailed system architecture diagram [here](https://github.com/
 *   Fellow Name: **Abdullahi Isa Ahmed**  
 *   Fellow ID: **FE/23/39125017**
 *   Track: **AI/ML**
+*   Peer Group Name: **Data Surge Team-Damaturu** at the **Peer Lead (PL)**
 *   3MTT Cohort 3 Fellowship Program
 
 ## Getting Started
