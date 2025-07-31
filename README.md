@@ -25,9 +25,9 @@ You can view the detailed system architecture diagram [here](https://github.com/
 
 ## Author
 
-**Abdullahi Isa Ahmed**  
-*   Fellow ID: FE/23/39125017 
-*   Track: AI/ML
+*   Fellow Name: **Abdullahi Isa Ahmed**  
+*   Fellow ID: **FE/23/39125017**
+*   Track: **AI/ML**
 *   3MTT Cohort 3 Fellowship Program
 
 ## Getting Started
