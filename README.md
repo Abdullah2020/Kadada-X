@@ -18,7 +18,10 @@ The system is designed with distinct modules for data handling, model training, 
 
 You can view the detailed system architecture diagram [here](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png) or by clicking the image below:
 
-[![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/3MTT_system_model1.png)](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png)
+<!-- [![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/3MTT_system_model1.png)](https://github.com/Abdullah2020/Kadada-X/blob/master/3MTT_system_model1.png) -->
+
+![Kadada-X System Architecture](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/3MTT_system_model1.png)
+
 
 
 ## Features
@@ -115,8 +118,10 @@ python app.py
 The application will typically start a development server, and you'll see output in your terminal indicating it's running, usually on `http://127.0.0.1:5000/`. Open this URL in your web browser.
 
 You should be greeted by the application's main page, which will look something like this:
+<!-- 
+[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/kadadaX_dashboard.png) -->
 
-[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/kadadaX_dashboard.png)
+![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/kadadaX_dashboard.png)
 
 
 ### Using the Web Application
