@@ -48,20 +48,15 @@ Follow these steps to set up and run the project locally.
     ```
 
 2.  **Create and Activate a Virtual Environment:**
-    It's best practice to use a virtual environment to manage project-specific dependencies. Using `venv` (which comes with Python):
+    It's best practice to use a virtual environment to manage project-specific dependencies. Using `conda`:
     ```bash
-    python -m venv venv
+    conda create -n kadadaX python=3.9
     ```
     Activate the virtual environment:
-    *   On Windows:
-        ```bash
-        venv\Scripts\activate
-        ```
-    *   On macOS/Linux:
-        ```bash
-        source venv/bin/activate
-        ```
-    Your terminal prompt should now indicate that you are in the `(venv)` environment.
+    ```bash
+    conda activate kadadaX
+    ```
+    Your terminal prompt should now indicate that you are in the `(kadadaX)` environment.
 
 3.  **Install Dependencies:**
     All required Python libraries are listed in the `requirements.txt` file. Install them by running:
