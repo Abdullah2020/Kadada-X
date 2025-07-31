@@ -4,6 +4,14 @@ Kadada-X is an AI-powered project designed to detect common diseases in rice lea
 
 Kadada-X was developed as part of 3MTT cohort 3 Knowledge Showcase competition, demonstrating a modular and robust machine learning pipeline.
 
+## Author
+
+*   Fellow Name: **Abdullahi Isa Ahmed**  
+*   Fellow ID: **FE/23/39125017**
+*   Track: **AI/ML**
+*   Peer Group Name: **Data Surge Team-Damaturu** at the **Peer Lead (PL)**
+*   3MTT Cohort 3 Fellowship Program
+
 ## Overall System Architecture
 
 The system is designed with distinct modules for data handling, model training, inference, and a web application for user interaction. The code is organized into logical modules for data processing (`data_handling/`), model definition and training (`model_pipeline/`), configuration (`configs/`), and the web interface (`app.py`, `templates/`, `static/`). Pre-trained model weights are stored in `results/saved_models_resnet/`.
@@ -22,14 +30,6 @@ You can view the detailed system architecture diagram [here](https://github.com/
     *   View the predicted disease and confidence score.
     *   Receive AI-generated management recommendations for the detected disease in either English or Hausa languages.
 *   **Multilingual Recommendations:** Leverages Google's Gemini AI to provide agricultural advice in the user's preferred language (English or Hausa).
-
-## Author
-
-*   Fellow Name: **Abdullahi Isa Ahmed**  
-*   Fellow ID: **FE/23/39125017**
-*   Track: **AI/ML**
-*   Peer Group Name: **Data Surge Team-Damaturu** at the **Peer Lead (PL)**
-*   3MTT Cohort 3 Fellowship Program
 
 ## Getting Started
 
