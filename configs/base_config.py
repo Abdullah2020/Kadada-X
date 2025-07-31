@@ -17,7 +17,7 @@ NORMALIZATION_MEAN = [0.485, 0.456, 0.406] # Standard ImageNet means
 NORMALIZATION_STD = [0.229, 0.224, 0.225]  # Standard ImageNet stds 
 
 # --- Training Parameters ---
-BATCH_SIZE_FOR_TRAINING = 32
+BATCH_SIZE_FOR_TRAINING = 32 # Batch size for training, can be adjusted based on GPU memory
 BATCH_SIZE_FOR_VALIDATION = 32 # Can be larger if memory allows
 NUMBER_OF_EPOCHS = 100 # Start with this, can be increased
 LEARNING_RATE = 0.0001

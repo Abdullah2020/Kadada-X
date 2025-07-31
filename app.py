@@ -38,9 +38,6 @@ except ImportError as e:
 app = Flask(__name__) # This MUST happen before you define routes with @app.route
 
 # --- Configuration for Flask App ---
-
-# ysk = 'xxxx-xxxx-xxxxx-xxxxx-' # <-- Put your real API key here
-
 ysk = os.getenv('FLASK_SECRET_KEY')
 app.secret_key = ysk  # Needed for flash messages
 
@@ -61,9 +58,6 @@ gemini_model_instance = None
 
 def load_models_and_config():
     global kadada_x_loaded_model, gemini_model_instance, cfg # Declare we're modifying globals
-
-    # GEMINI API SETUP
-    # GEMINI_API_KEY = "xxxx-xxxx-xxxxx-xxxxx-"  # <-- Put your real API key here
 
     GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')  # Use environment variable for security
 

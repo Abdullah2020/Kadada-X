@@ -4,6 +4,7 @@ import seaborn as sns
 import numpy as np
 import os
 
+# function to plot training performance curves
 def plot_training_performance_curves(training_history_log, save_dir=None):
     """
     Plots training and validation accuracy and loss curves.

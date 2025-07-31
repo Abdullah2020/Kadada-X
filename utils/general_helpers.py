@@ -6,6 +6,7 @@ import numpy as np
 
 from configs import base_config as cfg
 
+# Utility functions for general tasks in the Kadada-X pipeline
 def set_all_random_seeds(seed_value=cfg.RANDOM_SEED):
     """Sets random seeds for reproducibility across libraries."""
     random.seed(seed_value)

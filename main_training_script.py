@@ -68,7 +68,7 @@ def run_kadada_x_pipeline():
         print(f"An unexpected error occurred during data loading: {e}")
         return
 
-    # 4. Model Definition
+    # 4. Model Definition: Kadada-X Vision Model
     print("\n--- 3. Defining Kadada-X Vision Model ---")
     kadada_x_cv_model = KadadaXVisionModel(number_of_output_classes=number_of_unique_classes).to(cfg.DEVICE)
     print(f"KadadaXVisionModel instantiated and moved to {cfg.DEVICE}.")

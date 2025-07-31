@@ -9,6 +9,7 @@ import os
 from configs import base_config as cfg
 from utils.general_helpers import save_pytorch_model
 
+# Function to perform a single training step (one epoch pass over training data)
 def perform_training_step(ml_model, data_iterator, loss_criterion, model_optimizer, target_device):
     """Performs a single training step (one epoch pass over training data)."""
     ml_model.train() # Set model to training mode

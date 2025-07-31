@@ -6,6 +6,7 @@ from torchvision.datasets import ImageFolder
 import numpy as np
 from .dataset_loader import get_image_transforms # Relative import
 
+# function to display class distribution and save the plot
 def display_class_distribution(dataset_root_path, save_dir=None):
     """
     Calculates and displays the distribution of images per class.

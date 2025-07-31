@@ -8,6 +8,7 @@ from torch.utils.data import DataLoader, random_split, Subset
 
 from configs import base_config as cfg # Import config
 
+# Function to get image transformations
 def get_image_transforms(is_training=True):
     """
     Defines and returns image transformations for training and validation.

@@ -8,7 +8,7 @@ from .kadada_x_architecture import KadadaXVisionModel # Assuming it's in the sam
 from data_handling.dataset_loader import get_image_transforms # To reuse transform logic if needed
 from utils.general_helpers import load_pytorch_model
 
-# Global model variable to load it only once
+# Global model variable to load it only once: we can reuse it across multiple predictions
 KADADA_X_INFERENCE_MODEL = None
 MODEL_LOADED_PATH = None
 
