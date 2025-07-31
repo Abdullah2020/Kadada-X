@@ -116,7 +116,7 @@ The application will typically start a development server, and you'll see output
 
 You should be greeted by the application's main page, which will look something like this:
 
-[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)
+[![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/kadadaX_dashboard.png)
 
 
 ### Using the Web Application
@@ -124,6 +124,7 @@ You should be greeted by the application's main page, which will look something 
 **Disease Prediction Interface:**
 
 The application provides an intuitive interface for rice leaf disease detection. Here's what you'll see after uploading and analyzing a rice leaf image:
+
 ![Disease Prediction Result](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/prediction_result.png)
 
 The interface displays:
@@ -135,6 +136,7 @@ The interface displays:
 **AI-Powered Management Recommendations:**
 
 When you request management advice, the application provides detailed, AI-generated recommendations:
+
 ![Management Advice Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/management_advice.png)
 
 The recommendations include:
