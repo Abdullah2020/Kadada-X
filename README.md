@@ -161,7 +161,7 @@ The recommendations include:
 5.  If a disease is detected, you will see buttons asking if you need management advice. You can choose to receive these recommendations in either **English** or **Hausa**.
 6.  Click the button corresponding to your preferred language. The AI-generated agricultural advice will then be displayed on the page.
 
-## Contributing
+<!-- ## Contributing
 
 Contributions to Kadada-X Vision Model are welcome! If you have suggestions for improvements, new features, or bug fixes, please feel free to:
 
@@ -169,7 +169,7 @@ Contributions to Kadada-X Vision Model are welcome! If you have suggestions for 
 2.  Create a new branch for your feature or fix (`git checkout -b feature/YourAmazingFeature` or `git checkout -b bugfix/IssueDescription`).
 3.  Make your changes and commit them with clear messages (`git commit -m 'kadadaX need this amazing feature:'`).
 4.  Push your changes to your forked repository (`git push origin feature/YourAmazingFeature`).
-5.  Open a Pull Request back to the main `Abdullah2020/Kadada-X` repository, clearly describing your changes.
+5.  Open a Pull Request back to the main `Abdullah2020/Kadada-X` repository, clearly describing your changes. -->
 
 
 ## Acknowledgements
