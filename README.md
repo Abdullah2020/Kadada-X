@@ -118,6 +118,33 @@ You should be greeted by the application's main page, which will look something 
 
 [![Kadada-X Web App Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/kadadaX_dashboard.png)
 
+
+### Using the Web Application
+
+**Disease Prediction Interface:**
+
+The application provides an intuitive interface for rice leaf disease detection. Here's what you'll see after uploading and analyzing a rice leaf image:
+![Disease Prediction Result](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/prediction_result.png)
+
+The interface displays:
+- The uploaded rice leaf image
+- Predicted disease name (e.g., "Brown spot")  
+- Confidence level (99.98% in this example)
+- Options for getting management advice in **English** or **Hausa** Language
+
+**AI-Powered Management Recommendations:**
+
+When you request management advice, the application provides detailed, AI-generated recommendations:
+![Management Advice Interface](https://raw.githubusercontent.com/Abdullah2020/Kadada-X/master/screenshots/management_advice.png)
+
+The recommendations include:
+- Comprehensive disease management strategies
+- Cultural practices for prevention
+- Soil health improvement techniques
+- Water management guidelines
+- Sustainable and environmentally friendly solutions
+
+
 **How to Use the Web App:**
 
 1.  On the main page, click the "Choose File" button.
